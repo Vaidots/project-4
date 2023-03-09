@@ -11,7 +11,6 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe")
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
     description = models.TextField()
     ingredients = models.TextField()
     preparation_time = models.CharField(max_length=10, default=0)
