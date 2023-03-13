@@ -61,7 +61,12 @@
         </div>
       </div>
     </nav>
-
+    
+    <main class="flex-shrink-0 main-bg">
+      {% block content %}
+      <!-- Content of the page comes here -->
+      {% endblock content %}
+  </main>
 
   <footer class="footer mt-auto bg-dark py-3">
     <p class="m-0 text-center text-white">Made by Me</p>
