@@ -39,6 +39,62 @@
       </div>
     </div>
   </section>
+  <div class="container-fluid">
+    <div class="row">
+      <hr class="bg-black border-0 my-5">
 
+
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+          <h1 class="mt-4 mb-2 hero-text text-center">Check these cool recipes</h1>
+            <div class="row my-5">
+                {% for post in post_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/dmlp9qrmo/image/upload/v1673808166/sample.jpg">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ post.author }}</p>
+                                </div>
+                            </div>
+                            <a href="#" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                                {{ post.number_of_likes }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
   
 {%endblock%}
