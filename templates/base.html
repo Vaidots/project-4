@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--Css link-->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   
 
     <title>Foody</title>
 </head>
@@ -39,17 +42,17 @@
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'add_recipe' %}">Add Recipe</a>
+                <a class="nav-link" href="#">Add Recipe</a>
               </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    <a class="nav-link" href="#">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    <a class="nav-link" href="#">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    <a class="nav-link" href="#">Login</a>
                 </li> 
                 {% endif %}  
             </ul>
@@ -61,7 +64,7 @@
         </div>
       </div>
     </nav>
-    
+
     <main class="flex-shrink-0 main-bg">
       {% block content %}
       <!-- Content of the page comes here -->
