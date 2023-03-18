@@ -24,6 +24,10 @@ class Post(models.Model):
     class Meta:
         ordering = ["-created_on"]
 
+    def get_absolute_url(self):
+
+        return reverse('recipe_detail', kwargs={'slug': self.slug})
+
     def __str__(self):
         return self.title
 

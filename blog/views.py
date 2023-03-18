@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, RecipeForm
 
 
 class RecipeList(generic.ListView):
@@ -74,6 +76,21 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class PostAdd(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
+    """
+    only loged in users can add a post
+    """
+    model = Post
+    template_name = 'add_recipe.html'
+    form_class = RecipeForm
+    success_message = 'Recipe succesfully Added'
+
+    def form_valid(self, form):
+        """User who is signed in is set as the author of the posted recipe"""
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 def handler404(request, exception):
