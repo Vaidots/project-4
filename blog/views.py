@@ -75,6 +75,7 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 def handler404(request, exception):
     """
     Custom 404 page
