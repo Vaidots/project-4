@@ -5,35 +5,80 @@
 <div class="container p-0">
   <div class="row text-center">
     <div class="mb-3 recipe-detail">
-
-
       <h1 class="post-title">{{ post.title }}</h1>
-
-
       <p class="post-subtitle">
         {{ post.author.first_name }} | {{ post.created_on }}
       </p>
+      
     </div>
-    <div class="d-none d-md-block col-md-6">
-
-
-      {% if "placeholder" in post.featured_image.url %}
-      <img
-        src="https://res.cloudinary.com/dmlp9qrmo/image/upload/v1673808166/sample.jpg"
-      />
-      {% else %}
-      <img src=" {{ post.featured_image.url }}" width="100%" />
-      {% endif %}
-    </div>
+      <div class="d-none d-md-block col-md-6">
+        {% if "placeholder" in post.featured_image.url %}
+        <img
+          src="https://res.cloudinary.com/dmlp9qrmo/image/upload/v1673808166/sample.jpg"
+        />
+        {% else %}
+        <img src=" {{ post.featured_image.url }}" width="100%" />
+        {% endif %}
+      </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
+      <div class="col">
+          <div class="card mb-3 recipe-detail-card">
+              <h5 class="card-header">
+                  Description
+              </h5>
+              <div class="card-body">
+                  <p class="card-text">{{ post.description | safe }}</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card mb-3">
+              <h5 class="card-header">
+                  Ingredients
+              </h5>
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{ post.ingredients | safe }}</li>
+              </ul>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="card mb-3 recipe-detail-card">
+              <h5 class="card-header recipe-detail-header">Instructions</h5>
+              <div class="card-body">
+                  <div class="card-text">{{ post.method | safe }}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div>
+    <p>
+      <span><i class="far fa-clock pr-2"> </i></span>
+      <span>Prep Time: {{ post.preparation_time }}</span>
+    </p>
+    <p>
+      <span><i class="far fa-clock pr-2"></i></span>
+      <span>Cook Time: {{ post.cook_time }}</span>
+    </p>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="row">
     <div class="col mb-4 mt-3 left top">
       <div class="">
 
-        <p class="">{{ post.content | safe }}</p>
+        <p class="">
+          {{ post.content | safe }}
+
+        </p>
         <div class="row">
           <div class="col-1">
             <strong>
@@ -46,7 +91,7 @@
                    <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like" aria-label="like"><i
                         class="fas fa-heart"></i></button>
                   {% else %}
-                  <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                  <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i
                           class="far fa-heart"></i>
                   </button>
                   {% endif %}
