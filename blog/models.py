@@ -16,6 +16,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     description = models.TextField()
     ingredients = models.TextField()
+    instructions = models.TextField(default='')
     preparation_time = models.CharField(max_length=10, default=0)
     cook_time = models.CharField(max_length=10, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
