@@ -94,6 +94,32 @@ class PostAdd(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
         return super().form_valid(form)
 
 
+class EditRecipe(
+    LoginRequiredMixin, SuccessMessageMixin, generic.UpdateView
+        ):
+    """
+    To update posts
+    """
+    model = Post
+    form_class = RecipeForm
+    template_name = 'edit_post.html'
+    success_message = 'The post has been updated successfully!'
+    
+    def form_valid(self, form):
+        """
+        The user who is signed in is set to be the author of the post
+        """
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        """
+        Only the author can Edit the post
+        """
+        recipe = self.get_object()
+        return recipe.author == self.request.user
+
+
 def handler404(request, exception):
     """
     Custom 404 page
