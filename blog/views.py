@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm, RecipeForm
 
 
@@ -120,6 +120,27 @@ class EditRecipe(
         return recipe.author == self.request.user
 
 
+class EditComment(LoginRequiredMixin, SuccessMessageMixin, generic.UpdateView):
+    """
+    Allows the user to edit their comment
+    succes message pops after edited comment
+
+    """
+    model = Comment
+    template_name = 'edit_comment.html'
+    form_class = CommentForm
+    success_message = 'Your comment has been edited'
+    success_url = "/"
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        comment = self.get_object()
+        return recipe.author == self.request.user
+
+  
 def handler404(request, exception):
     """
     Custom 404 page

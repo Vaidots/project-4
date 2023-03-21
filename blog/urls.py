@@ -9,4 +9,7 @@ urlpatterns = [
     path('like/<slug:slug>/', views.PostLike.as_view(), name='post_like'),
     path('<slug:slug>/edit/', views.EditRecipe.as_view(),
          name='post_update'),
+    path('edit_comment/<int:pk>', views.EditComment.as_view(),
+         name='edit_comment'),
+  
 ]
