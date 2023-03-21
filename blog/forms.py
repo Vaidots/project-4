@@ -27,5 +27,6 @@ class RecipeForm(forms.ModelForm):
             'preparation_time',
             'cook_time',
             'ingredients',
+            'instructions',
             'featured_image',
         ]

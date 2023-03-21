@@ -104,7 +104,7 @@ class EditRecipe(
     form_class = RecipeForm
     template_name = 'edit_post.html'
     success_message = 'The post has been updated successfully!'
-    
+
     def form_valid(self, form):
         """
         The user who is signed in is set to be the author of the post
