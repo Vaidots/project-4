@@ -7,11 +7,16 @@
   <div class="row text-center">
     <div class="mb-3 recipe-detail">
     </div>
-    {% if request.user == post.author %}
+    {% if request.user == post.author or request.user.is_superuser %}
 <div class="container">
     <div class="row">
         <div class="col-xl-4 offset-xl-8">
           <a href="{% url 'post_update' post.slug %}" class="btn btn-signup m-1">(Edit)</a>
+          <span>
+            <a class="action-btn btn btn-info" href="{% url 'delete_recipe' post.slug %}"
+                aria-label="delete-recipe">(Delete)
+            </a>
+        </span>
         </div>
     </div>
 </div>
@@ -160,7 +165,6 @@
           {% if user.username == comment.name %}
           <span class="comment-action-btn pl-2">
             <a href="{% url 'edit_comment' comment.id %}" > (Edit)</a>
-           
           </span>
           {% endif %}
         </div>           

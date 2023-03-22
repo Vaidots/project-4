@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
 from .models import Post, Comment
 from .forms import CommentForm, RecipeForm
 
@@ -140,7 +141,31 @@ class EditComment(LoginRequiredMixin, SuccessMessageMixin, generic.UpdateView):
         comment = self.get_object()
         return recipe.author == self.request.user
 
-  
+
+class DeleteRecipe(
+                    LoginRequiredMixin, 
+                    SuccessMessageMixin, 
+                    generic.DeleteView):
+    """
+    Allow user to delete a post
+    Success message as user feedback
+    """
+    model = Post
+    template_name = 'delete_recipe.html'
+    success_url = reverse_lazy('home')
+    success_message = 'Post Deleted'
+
+    def delete(self, request, *args, **kwargs):
+        """Generate success message on delete view"""
+        messages.success(self.request, self.success_message)
+        return super(DeleteRecipe, self).delete(request, *args, **kwargs)
+
+    def test_func(self):
+        """Test that logged in user is post author"""
+        recipe = self.get_object()
+        return recipe.author == self.request.user
+
+
 def handler404(request, exception):
     """
     Custom 404 page
