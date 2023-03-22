@@ -165,6 +165,7 @@
           {% if user.username == comment.name %}
           <span class="comment-action-btn pl-2">
             <a href="{% url 'edit_comment' comment.id %}" > (Edit)</a>
+            <a href="{% url 'delete_comment' comment.id %}" > (Delete)</a>
           </span>
           {% endif %}
         </div>           
