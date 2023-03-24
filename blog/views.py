@@ -122,31 +122,10 @@ class EditRecipe(
         return recipe.author == self.request.user
 
 
-class EditComment(LoginRequiredMixin, SuccessMessageMixin, generic.UpdateView):
-    """
-    Allows the user to edit their comment
-    succes message pops after edited comment
-
-    """
-    model = Comment
-    template_name = 'edit_comment.html'
-    form_class = CommentForm
-    success_message = 'Your comment has been edited'
-    success_url = "/"
-
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
-
-    def test_func(self):
-        comment = self.get_object()
-        return recipe.author == self.request.user
-
-
 class DeleteRecipe(
-                    LoginRequiredMixin, 
-                    SuccessMessageMixin, 
-                    generic.DeleteView):
+    LoginRequiredMixin, SuccessMessageMixin,
+    UserPassesTestMixin, generic.UpdateView
+        ):
     """
     Allow user to delete a post
     Success message as user feedback
@@ -164,31 +143,6 @@ class DeleteRecipe(
     def test_func(self):
         """Test that logged in user is post author"""
         recipe = self.get_object()
-        return recipe.author == self.request.user
-
-
-class DeleteComment(
-                    LoginRequiredMixin,
-                    SuccessMessageMixin,
-                    generic.DeleteView):
-    """
-    Allows the user to edit their comment
-    succes message pops after edited comment
-
-    """
-    model = Comment
-    template_name = 'delete_comment.html'
-    form_class = CommentForm
-    success_message = 'Your comment has been deleted'
-    success_url = "/"
-
-    def delete(self, request, *args, **kwargs):
-        """Generate success message on delete view"""
-        messages.success(self.request, self.success_message)
-        return super(DeleteComment, self).delete(request, *args, **kwargs)
-
-    def test_func(self):
-        comment = self.get_object()
         return recipe.author == self.request.user
 
 
