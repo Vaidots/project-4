@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from .models import Post, Comment
@@ -69,7 +69,7 @@ class RecipeDetail(View):
         )
 
 
-class PostLike(View):
+class PostLike(LoginRequiredMixin, View):
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -96,7 +96,8 @@ class PostAdd(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
 
 
 class EditRecipe(
-    LoginRequiredMixin, SuccessMessageMixin, generic.UpdateView
+    LoginRequiredMixin, SuccessMessageMixin,
+    UserPassesTestMixin, generic.UpdateView
         ):
     """
     To update posts
