@@ -32,7 +32,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['https://foody-blog.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['foody-blog.herokuapp.com', 'localhost']
 
 
 # Application definition

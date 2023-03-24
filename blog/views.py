@@ -123,8 +123,8 @@ class EditRecipe(
 
 
 class DeleteRecipe(
-    LoginRequiredMixin, SuccessMessageMixin,
-    UserPassesTestMixin, generic.UpdateView
+        LoginRequiredMixin, SuccessMessageMixin,
+        UserPassesTestMixin, generic.DeleteView
         ):
     """
     Allow user to delete a post
