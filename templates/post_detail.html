@@ -25,14 +25,14 @@
       <h1 class="post-title">{{ post.title }}</h1>
       
       <p class="post-subtitle">
-        {{ post.author.first_name }} | {{ post.created_on }}
+        {{ post.author }} | {{ post.created_on }}
       </p>
       
  
       <div class="d-none d-md-block col-md-6">
         {% if "placeholder" in post.featured_image.url %}
         <img
-          src="https://res.cloudinary.com/dmlp9qrmo/image/upload/v1673808166/sample.jpg"
+          src="https://res.cloudinary.com/dmlp9qrmo/image/upload/v1673808166/sample.jpg" 
         />
         {% else %}
         <img src=" {{ post.featured_image.url }}" width="100%" />

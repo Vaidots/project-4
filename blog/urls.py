@@ -10,7 +10,6 @@ urlpatterns = [
     path('like/<slug:slug>/', views.PostLike.as_view(), name='post_like'),
     path('<slug:slug>/edit/', views.EditRecipe.as_view(),
          name='post_update'),
-    path('<slug:slug>/delete/', views.DeleteRecipe.as_view(), 
+    path('<slug:slug>/delete/', views.DeleteRecipe.as_view(),
          name='delete_recipe'),
-    
 ]
