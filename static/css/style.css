@@ -1,3 +1,17 @@
-body {
-   background-color: black
-    }
+
+.author {
+    color: black;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.post-link:hover,
+.page-link {
+    color: #E84610;
+}
+

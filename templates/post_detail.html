@@ -11,10 +11,10 @@
 <div class="container">
     <div class="row">
         <div class="col-xl-4 offset-xl-8">
-          <a href="{% url 'post_update' post.slug %}" class="btn btn-signup m-1">(Edit)</a>
+          <a href="{% url 'post_update' post.slug %}" class="btn btn-secondary rounded-pill btn-lg ml-2 my-2 my-lg-0">Edit</a>
           <span>
-            <a class="action-btn btn btn-info" href="{% url 'delete_recipe' post.slug %}"
-                aria-label="delete-recipe">(Delete)
+            <a class="btn btn-danger rounded-pill btn-lg ml-2 my-2 my-lg-0" href="{% url 'delete_recipe' post.slug %}"
+                aria-label="delete-recipe">Delete
             </a>
         </span>
         </div>
