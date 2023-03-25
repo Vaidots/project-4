@@ -57,3 +57,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+class TeamMember(models.Model):
+    name = models.CharField(max_length=255)
+    photo = CloudinaryField('image')
+    bio = models.TextField()
+
+    def __str__(self):
+        return self.name

@@ -5,8 +5,10 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from .models import Post, Comment
+from .models import Post, Comment, TeamMember
 from .forms import CommentForm, RecipeForm
+from django.views.generic.list import ListView
+from django.urls import path
 
 
 class RecipeList(generic.ListView):
@@ -144,6 +146,12 @@ class DeleteRecipe(
         """Test that logged in user is post author"""
         recipe = self.get_object()
         return recipe.author == self.request.user
+
+
+class TeamMemberListView(ListView):
+    model = TeamMember
+    template_name = 'team.html'
+    context_object_name = 'teammembers'
 
 
 def handler404(request, exception):

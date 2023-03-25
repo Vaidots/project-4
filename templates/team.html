@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1 class="text-center mb-5">Our Team</h1>
+<div class="container">
+    <div class="row justify-content-center">
+    {% for teammember in teammembers %}
+        <div class=" col-md-6">
+            <div class="card" style="width: 18rem;" >
+                <img src="{{ teammember.photo.url }}" class="card-img-top" alt="{{ teammember.name }}">
+                <div class="card-body">
+                <h5 class="card-title ">{{ teammember.name }}</h5>
+                <p class="card-text">{{ teammember.bio }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
