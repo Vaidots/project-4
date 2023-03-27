@@ -126,24 +126,159 @@ After, the user can Add recipes.
 * A comment box is shows with posting names user.
 ![Comment](/media/images/Comment%20section.JPG)
 
-* after the comment is approved by admin the message appears on the post
+* after the comment is approved by admin the message appears on the postW
 
 ![Approved-comment](/media/images/Approvedcomment2.JPG)
 
 ## Edit Post
 
 * When user want to edit his post, he will be linked to edit post form, where user is able to edit every section he wants.
+* After editing, user will receive a succes message and his post will be updated.
 
 ![EditPost](/media/images/Editingpost.JPG)
 
 ## Delete post
 
-* On the other hand if the user is not happy with recipe, he can delete it. 
+* On the other hand if the user is not happy with recipe, he can delete it.
+* After deletion, user will receive a succes message and will be redirected to the main page and his recipe will be no longer on the page
 
 ![DeletePost](/media/images/DeletePost.JPG)
 
 ## Add recipe
 
 * Users can add recipe, when they press "Add recipe" link, and will need to fill the form.
+* After filling the form (users cant post if all the areas are not filled) will receive succes message and the post will be posted on the main page.
 
 ![Addrecipe](/media/images/ADDrecipe.JPG)
+
+## Team members
+
+* To show user that the page has team members, who take care of it
+* Each one has a card created with name and a short bio about them
+![Team](/media/images/TEAM.JPG)
+
+# Future Features
+
+* Implement user delete,edit comments.
+* style the recipes better
+* implement search option
+* adding more icons on the recipes such us: stars, chilli pepper for spicyness, vegeterian.
+* Save recipes into your account
+
+# Securit Features
+
+* LoginRequiredMixin is used to make sure that any requests to access secure pages by non-authenticated users are redirected to the login page, preventing any unwanted requests.  
+
+* UserPassesTestMixin is used to ensure users can only edit/delete posts and comments for which they are the author. If the user doesn't pass the test they are shown an HTTP 403 Forbidden error.
+
+## Form Validation
+
+* If incorrect or empty data is added to a form, the form won't submit and a warning will appear to the user informing them what field raised the error.
+
+# Deploy to Heroku
+
+* To deploy this page to Heroku from its GitHub repository, follow these steps:
+
+## Create the Heroku App:  
+
+* Log in to Heroku or create an account.
+
+* On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
+
+* Enter a unique and meaningful app name.
+
+* Next select your region.
+
+* Click on the Create App button.
+
+## Attach a Postgres database:
+
+* In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option. 
+
+* Copy the DATABASE_URL located in Config Vars in the Settings Tab.
+
+## Prepare the environment and settings.py file :
+
+* In your GitPod workspace, create an env.py file in the main directory.  
+
+* Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
+
+* Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
+
+* Comment out the default database configuration.
+
+* Save files and make migrations.
+
+* Add the CLOUDINARY_USERNAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET values to your env.py file.
+
+* Add the cloudinary libraries to the list of installed apps.
+
+* Add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+
+* Link the file to the templates directory in Heroku.
+
+* Change the templates directory to TEMPLATES_DIR
+
+* Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
+
+## Create files and directories
+
+* Create requirements.txt file
+
+* Create three directories in the main directory; media, storage and templates.
+
+* Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi:application
+
+## Update Heroku Config Vars  
+
+Make sure the following Config Vars in Heroku are setup as well as in the env.py file:
+
+* DATABASE_URL
+
+* SECRET_KEY value
+
+* CLOUDINARY_USERNAME
+
+* CLOUDINARY_API_KEY
+
+* CLOUDINARY_API_SECRET
+
+* PORT = 8000
+
+* DISABLE_COLLECTSTATIC = 1
+
+# Deploy
+
+* Ensure in Django settings, DEBUG is False
+
+* Go to the deploy tab on Heroku and connect to GitHub, then to the required repository.
+
+* Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
+
+* Click View to view the deployed site.
+
+* The website will be live.
+
+## Fork repository
+
+* Locate the repository at this link [FoodyBlog](https://github.com/Vaidots/project-4)
+
+* At the top of the repository, on the right side of the page, select "Fork" from the buttons available.
+
+* A copy of the repository is now created.
+
+## Cloning the repository 
+
+
+1. Locate the repository at this link [FoodyBlog](https://github.com/Vaidots/project-4)
+
+2. Under 'Code', see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided.
+
+3. Open Terminal.
+
+4. In Terminal, change the current working directory to the desired location of the cloned directory.
+
+5. Type 'git clone', and then paste the URL copied from GitHub earlier.
+
+6. Type 'Enter' to create the local clone.
+
