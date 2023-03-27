@@ -131,6 +131,20 @@ After, the user can Add recipes.
 * Each one has a card created with name and a short bio about them
 ![Team](/media/images/TEAM.JPG)
 
+
+## About us
+
+* User can see our goal of this blog
+
+![AboutUS](/media/images/AboutUS.JPG)
+
+## Footer
+
+* Users can click on mini icons to find us on facebook,youtube,twitter,instagram 
+
+![Footer](/media/images/Footer.JPG)  
+
+
 # Future Features
 
 * Implement user delete,edit comments.
@@ -286,4 +300,42 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 5. Type 'git clone', and then paste the URL copied from GitHub earlier.
 
 6. Type 'Enter' to create the local clone.
+
+
+# Languages
+
+* HTML
+* CSS
+* Javascript
+* Python
+
+# Technologies Used
+
+* [Github](https://github.com/) Used for version control and agile tool.
+* [Gitpod](https://gitpod.io/) as development environment.
+* [Django](https://www.djangoproject.com/)  Main python framework used in the development of this project
+* [Django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)   for authentication of users.
+* [Heroku](https://dashboard.heroku.com/) cloud based platform to deploy the web app on.
+* [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)  Used for overall development and testing of responsiveness and performance.
+* [Font Awesome](https://fontawesome.com/)  Used for icons in information bar.
+* [W3C](https://www.w3.org/)  Used for HTML & CSS Validation.
+* [Jshint](https://jshint.com/)  used to validate javascript
+* [Summernote](https://summernote.org/)  A WYSIWYG editor to allow users to edit their posts
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)  used to manage Django Forms
+* [Cloudinary](https://cloudinary.com/)  the image hosting service used to upload images
+* [Bootsrap5](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  CSS Framework for developing responsiveness and styling
+
+
+# Credits
+
+* [W3Schools](https://www.w3schools.com/)
+* [CODEMY](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
+* [StackOverflow](https://stackoverflow.com/)
+* [Code Institue blog walkthrough](https://github.com/Code-Institute-Solutions/Django3blog)
+* [Code institue tutors](https://learn.codeinstitute.net/ci_support/diplomainsoftwaredevelopmentecomm/tutor)
+* [Pexels](https://www.pexels.com/)
+
+# Acknowledgments
+
+Big thanks to my mentor Brian for the help,support guidance and code review, Code institute slack community and big big thanks tutor support, Thanks.
 
