@@ -5,7 +5,7 @@ The live link can be found here - [FOODY BLOG](https://foody-blog.herokuapp.com/
 
 ![responsive](/media/images/I%20am%20responsive.jpg)
 
-
+# Table of Content
 * [User Experience (UX)](#user-experience-ux)
 * [Design](#design)
 * [Features](#features)
