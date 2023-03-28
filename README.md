@@ -6,9 +6,14 @@ The live link can be found here - [FOODY BLOG](https://foody-blog.herokuapp.com/
 ![responsive](/media/images/I%20am%20responsive.jpg)
 
 
+* [User Experience (UX)](#user-experience-ux)
+* [Design](#design)
+* [Features](#features)
+* [Technologies](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
 
-
-# User Experienc (UX)
+# User Experience (UX)
 
 Someone who would be interested in FOODY recipe blog app, potentiially a wide range of users who are interested in cooking and trying out new recipes such us : Home cooks , food enthusiasts, beginner cooks, health-conscious and etc.
 
@@ -82,6 +87,8 @@ After, the user can Add recipes.
 
 ![After-login](/media/images/after%20login%20homepage.JPG)
 
+[Back to Top](#top)
+
 
 ## Post Section
 
@@ -91,20 +98,27 @@ After, the user can Add recipes.
 * Clicking on the title will open the post
 ![PostSection](/media/images/Post%20Section.JPG)
 
+[Back to Top](#top)
+
 ##  Recipe detail
 
 * This section displays full pictures, descriptio, ingredients, instructions 
 * There is also a prep and cook time displayed with likes and comment number.
 ![Recipe-details](/media/images/Recipedetails.JPG)
 
+[Back to Top](#top)
+
 ## Comment section 
 
 * A comment box is shows with posting names user.
 ![Comment](/media/images/Comment%20section.JPG)
 
+[Back to Top](#top)
 * after the comment is approved by admin the message appears on the postW
 
 ![Approved-comment](/media/images/Approvedcomment2.JPG)
+
+[Back to Top](#top)
 
 ## Edit Post
 
@@ -113,6 +127,8 @@ After, the user can Add recipes.
 
 ![EditPost](/media/images/Editingpost.JPG)
 
+[Back to Top](#top)
+
 ## Delete post
 
 * On the other hand if the user is not happy with recipe, he can delete it.
@@ -120,6 +136,7 @@ After, the user can Add recipes.
 
 ![DeletePost](/media/images/DeletePost.JPG)
 
+[Back to Top](#top)
 ## Add recipe
 
 * Users can add recipe, when they press "Add recipe" link, and will need to fill the form.
@@ -127,12 +144,15 @@ After, the user can Add recipes.
 
 ![Addrecipe](/media/images/ADDrecipe.JPG)
 
+[Back to Top](#top)
+
 ## Team members
 
 * To show user that the page has team members, who take care of it
 * Each one has a card created with name and a short bio about them
 ![Team](/media/images/TEAM.JPG)
 
+[Back to Top](#top)
 
 ## About us
 
@@ -146,6 +166,8 @@ After, the user can Add recipes.
 
 ![Footer](/media/images/Footer.JPG)  
 
+[Back to Top](#top)
+
 
 # Future Features
 
@@ -154,6 +176,8 @@ After, the user can Add recipes.
 * implement search option
 * adding more icons on the recipes such us: stars, chilli pepper for spicyness, vegeterian.
 * Save recipes into your account
+
+[Back to Top](#top)
 
 
 # Testing
@@ -185,7 +209,9 @@ _All button functionality is working properly and success messages disappear aft
 | Error 403 page is displayed for forbidden access    | 1. Attempt to access a page or resource that the user does not have permission to access, for example by entering a restricted URL | The browser displays the error 403 page | Pass      |
 | Error 405 page is displayed for invalid HTTP method | 1. Attempt to use an invalid HTTP method for a resource, for example by using GET instead of POST or PUT                           | The browser displays the error 405 page | Pass      |
 
-# Lighouse
+[Back to Top](#top)
+
+# Lightouse
 
 ![Lightouse](/media/images/lighthouse1%2C5.JPG)    
 
@@ -211,11 +237,15 @@ _All button functionality is working properly and success messages disappear aft
 ![Python](/media/images/PythonTest.JPG)
 
 * All test passed without error
+
+[Back to Top](#top)
 # Security Features
 
 * LoginRequiredMixin is used to make sure that any requests to access secure pages by non-authenticated users are redirected to the login page, preventing any unwanted requests.  
 
 * UserPassesTestMixin is used to ensure users can only edit/delete posts and comments for which they are the author. If the user doesn't pass the test they are shown an HTTP 403 Forbidden error.
+
+[Back to Top](#top)
 
 ## Form Validation
 
@@ -237,11 +267,15 @@ _All button functionality is working properly and success messages disappear aft
 
 * Click on the Create App button.
 
+[Back to Top](#top)
+
 ## Attach a Postgres database:
 
 * In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option. 
 
 * Copy the DATABASE_URL located in Config Vars in the Settings Tab.
+
+[Back to Top](#top)
 
 ## Prepare the environment and settings.py file :
 
@@ -267,6 +301,8 @@ _All button functionality is working properly and success messages disappear aft
 
 * Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
 
+[Back to Top](#top)
+
 ## Create files and directories
 
 * Create requirements.txt file
@@ -274,6 +310,8 @@ _All button functionality is working properly and success messages disappear aft
 * Create three directories in the main directory; media, storage and templates.
 
 * Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi:application
+
+[Back to Top](#top)
 
 ## Update Heroku Config Vars  
 
@@ -293,7 +331,9 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 
 * DISABLE_COLLECTSTATIC = 1
 
-# Deploy
+[Back to Top](#top)
+
+# Deployment
 
 * Ensure in Django settings, DEBUG is False
 
@@ -305,6 +345,8 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 
 * The website will be live.
 
+[Back to Top](#top)
+
 ## Fork repository
 
 * Locate the repository at this link [FoodyBlog](https://github.com/Vaidots/project-4)
@@ -312,6 +354,8 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 * At the top of the repository, on the right side of the page, select "Fork" from the buttons available.
 
 * A copy of the repository is now created.
+
+[Back to Top](#top)
 
 ## Cloning the repository 
 
@@ -328,6 +372,8 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 
 6. Type 'Enter' to create the local clone.
 
+[Back to Top](#top)
+
 
 # Languages
 
@@ -335,6 +381,8 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 * CSS
 * Javascript
 * Python
+
+[Back to Top](#top)
 
 # Technologies Used
 
@@ -352,6 +400,8 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 * [Cloudinary](https://cloudinary.com/)  the image hosting service used to upload images
 * [Bootsrap5](https://getbootstrap.com/docs/5.2/getting-started/introduction/)  CSS Framework for developing responsiveness and styling
 
+[Back to Top](#top)
+
 
 # Credits
 
@@ -360,9 +410,12 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 * [StackOverflow](https://stackoverflow.com/)
 * [Code Institue blog walkthrough](https://github.com/Code-Institute-Solutions/Django3blog)
 * [Code institue tutors](https://learn.codeinstitute.net/ci_support/diplomainsoftwaredevelopmentecomm/tutor)
-* [Pexels](https://www.pexels.com/)
+* [Pexels](https://www.pexels.com/)  
+
+[Back to Top](#top)
 
 # Acknowledgments
 
 Big thanks to my mentor Brian for the help,support guidance and code review, Code institute slack community and big big thanks tutor support, Thanks.
 
+[Back to Top](#top)
