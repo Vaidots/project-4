@@ -183,7 +183,32 @@ _All button functionality is working properly and success messages disappear aft
 | Error 403 page is displayed for forbidden access    | 1. Attempt to access a page or resource that the user does not have permission to access, for example by entering a restricted URL | The browser displays the error 403 page | Pass      |
 | Error 405 page is displayed for invalid HTTP method | 1. Attempt to use an invalid HTTP method for a resource, for example by using GET instead of POST or PUT                           | The browser displays the error 405 page | Pass      |
 
+# Lighouse
 
+![Lightouse](/media/images/lighthouse1%2C5.JPG)    
+
+
+# CSS validator
+
+* no error
+
+![CSSValidator](/media/images/JigsawValidator.JPG)
+
+# W3C HTML validator
+
+* got information points due to pritier extension and one warning, due to before and after autentication I used h1
+
+![HTML](/media/images/HTMLCHECKER.JPG)
+
+# Jshint  
+
+* Pass
+
+# Python
+
+![Python](/media/images/PythonTest.JPG)
+
+* All test passed without error
 # Security Features
 
 * LoginRequiredMixin is used to make sure that any requests to access secure pages by non-authenticated users are redirected to the login page, preventing any unwanted requests.  
