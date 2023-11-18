@@ -1,7 +1,7 @@
 # FOODY Recipe Blog !!
 At our food recipe blog, we're passionate about cooking and sharing our love of food with other. Our symbol, a represents our commitment to bringing you delicious recipes that are easy ti make. We started this blog because we believe that good food brings people together. We've worked hard to create a beautiful and user-friendly website that makes it easy for you to find and try out our recipes. As food lovers, we're always on the lookout for new and exciting recipes to share with our readers. We hope that our blog inspires you ti get creative in the kitchen
 
-The live link can be found here - [FOODY BLOG](https://foody-blog.herokuapp.com/)
+The live link can be found here - [FOODY BLOG](https://project-milestone4-78fc9e7b5c7b.herokuapp.com/)
 
 ![responsive](/media/images/I%20am%20responsive.jpg)
 
